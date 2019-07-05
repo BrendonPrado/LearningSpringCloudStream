@@ -3,8 +3,8 @@
 ## Binder ativo RabbitMQ
 
 ## Pré requisito para rodar
-Java 8 
-RabbitMQ
+- Java 8 
+- RabbitMQ
 
 ### endpoint
 
