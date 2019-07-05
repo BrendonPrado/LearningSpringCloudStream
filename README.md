@@ -1,32 +1,17 @@
-# spring-boot-rabbitmq
+# Projeto feito utilizando o spring Cloud Stream 
 
-Código fonte do Post: [RabbitMQ no Spring Boot](https://wp.me/p5RSbg-jZ).
+## Binder ativo RabbitMQ
 
-## Pré requisito
+## Pré requisito para rodar
+Java 8 
+RabbitMQ
 
-- Maven 3
-- Java 8
-- RabbitMQ 3.7.2
+### endpoint
 
-## Configurando RabbitMQ
-
-- Acessar ```http://localhost:15672/#/queue```
-- Criar Queue com o nome ```OrderQueue``` com o atribributo Durability ```Durable```
-
-## Preparando ambiente
-
-- ```cd spring-boot-rabbitmq```
-- ```mvn clean package```
-
-## Executando 
-
-#### Enviando pedidos para fila do RabbitMQ
-
-- ```cd spring-boot-rabbitmq/sender```
-- ```mvn spring-boot:run```
+- post em /sales rodando na porta 8090 de um json com um objeto sale.
 
 
-#### Consumindo fila do RabbitMQ
+### Obrigações delegadas as aplicações
+- sender apenas possui o endpoint que recebe um objeto novo de sale e repassa para consumer.
+- consumer recebe de sender e persiste este novo objeto.
 
-- ```cd spring-boot-rabbitmq/consumer```
-- ```mvn spring-boot:run```
